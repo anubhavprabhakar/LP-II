@@ -21,7 +21,7 @@ def add_edge(v1, v2):
         graph[v2].append(v1)
 
 
-def input_vertices():
+def input_edges():
     v1, v2 = [int(x) for x in input('Enter an edge(v1 v1):').split()]
     add_edge(v1, v2)
 
@@ -82,13 +82,13 @@ for i in range(int(input('Enter number of vertices: '))):
     add_vertex(v)
 
 for i in range(1, vertex_no):
-    input_vertices()
+    input_edges()
 
     
 while True:
     more = (input('Enter more edges?(Y/N): '))
     if more == 'Y' or more == 'y':
-        input_vertices()
+        input_edges()
     else:
         break
 
