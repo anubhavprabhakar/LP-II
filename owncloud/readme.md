@@ -3,4 +3,4 @@ script to install owncloud on ubuntu 22.04 download the script:
 2) chmod +x owncloud.bash 
 3) sudo bash ./owncloud.bash 
 
-you are done
+done
