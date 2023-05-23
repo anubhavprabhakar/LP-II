@@ -32,6 +32,7 @@ for _ in range(n):
 	graph.append(row)
 
 m = int(input('Enter the number of colors: '))
+
 colorArray = [0]*n
 
 if graphF(graph, m, 0, colorArray):

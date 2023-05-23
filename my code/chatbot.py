@@ -94,6 +94,7 @@ def chatbot():
     chat.converse()
 
 if __name__== "__main__":
+    chatbot()
     nltk.download('punkt')
     nltk.download('averaged_perceptron_tagger')
     chatbot()

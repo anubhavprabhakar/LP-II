@@ -40,7 +40,7 @@ def astarsearch(start_node, stop_node):
 			while parents[n]!=n:
 				path.append(n)
 				n = parents[n]
-			path.append(n)
+			path.append(start_node)
 			path.reverse()
 			print('Path: {}'.format(path))
 			return path
