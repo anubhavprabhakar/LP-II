@@ -5,7 +5,7 @@ script to install owncloud on ubuntu 22.04 download the script:
 
 done
 
-
+gcloud
 1. git clone https://github.com/GoogleCloudPlatform/python-docs-samples
 2. cd python-docs-samples/appengine/standard/hello_world
 3. dev_appserver.py app.yaml
