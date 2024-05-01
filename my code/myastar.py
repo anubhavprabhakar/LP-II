@@ -9,7 +9,7 @@ def astarsearch(start_node, stop_node):
 	while(open_set):
 		n = None
 		for q in open_set:
-			if n == None or g[q]+heuristic(q)<g[n]+heuristic(n):
+			if n == None or g[q]+heuristic[q]<g[n]+heuristic[n]:
 				n = q
 		
 		if n == stop_node or Graph_nodes[n] == None:
@@ -56,25 +56,34 @@ def get_neighbours(node):
 		return Graph_nodes[node]
 	else:
 		return None
-	
-def heuristic(n):
-    H_dist = {
-        'A': 11,
-        'B': 6,
-        'C': 99,
-        'D': 1,
-        'E': 7,
-        'G': 0,
-    }
-    return H_dist[n]
-   
-Graph_nodes = {
-	'A': [('B', 2), ('E', 3)],
-    'B': [('A', 2), ('C', 1), ('G', 9)],
-    'C': [('B', 1)],
-    'D': [('E', 6), ('G', 1)],
-    'E': [('A', 3), ('D', 6)],
-    'G': [('B', 9), ('D', 1)]
-}
 
-astarsearch('A', 'G')
+
+Graph_nodes = {}
+
+n = int(input("Enter no of edges: "))
+for i in range(n):
+    edge = input("Enter edge (format: source destination weight): ").split(' ')
+    source = edge[0]
+    dest = edge[1]
+    weight = int(edge[2])
+    if(source not in Graph_nodes):
+        Graph_nodes[source] = [[dest, weight]]
+    else:
+        Graph_nodes[source].append([dest, weight])    
+    if(dest not in Graph_nodes):
+        Graph_nodes[dest] = [[source, weight]]
+    else:
+        Graph_nodes[dest].append([source, weight])
+        
+	
+heuristic = {}
+print("Enter heuristic values: ")
+for key in Graph_nodes:
+    print("Node: " + key)
+    h = int(input("H: "))
+    heuristic[key] = h
+    
+while(true):
+    s = input("Enter source: ")
+    d = input("Enter destination: ")
+    astarsearch(s, d)
