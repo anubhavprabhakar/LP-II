@@ -15,7 +15,6 @@ def astarsearch(start_node, stop_node):
 		if n == stop_node or Graph_nodes[n] == None:
 			pass
 		
-		
 		else:
 			for (m, weight) in get_neighbours(n):
 				if m not in open_set and m not in closed_set:
@@ -77,6 +76,7 @@ for i in range(n):
         
 	
 heuristic = {}
+
 print("Enter heuristic values: ")
 for key in Graph_nodes:
     print("Node: " + key)
